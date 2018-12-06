@@ -1,4 +1,5 @@
 #include "car.h"
+#include <stdbool.h>
 
 struct ImplementationCar
 {
