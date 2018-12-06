@@ -8,6 +8,7 @@ struct ImplementationCar
   double fill_level;
   double acceleration_rate;
   int speed;
+  bool is_available;
 };
 
 static Car car_park[20];
