@@ -4,7 +4,7 @@
 struct ImplementationCar
 {
   enum CarType carType;
-  enum Color corlor;
+  enum Color color;
   double fill_level;
   double acceleration_rate;
   int speed;
