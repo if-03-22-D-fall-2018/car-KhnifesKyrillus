@@ -19,11 +19,11 @@ struct ImplementationCar jeep1 { JEEP, SILVER, 80.0, 0.0, 0, true };
 struct ImplementationCar jeep2 { JEEP, BLACK, 80.0, 0.0, 0, true };
 
 
-static Car car_park[20] = {&aixam};
+static Car car_park[20] = {&aixam,&fiat_mutipla1,&fiat_mutipla2,&fiat_mutipla3,jeep1,jeep2};
 
 void init()
 {
-  
+
 }
 
 Car get_car(enum CarType carType)
