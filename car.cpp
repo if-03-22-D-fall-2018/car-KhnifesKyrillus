@@ -6,7 +6,7 @@ struct ImplementationCar
   enum CarType carType;
   enum Color color;
   double fill_level;
-  double acceleration_rate;y
+  double acceleration_rate;
   int speed;
   bool is_available;
 };
