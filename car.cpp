@@ -55,10 +55,12 @@ double get_fill_level(Car car)
 {
   return car->fill_level;
 }
+
 double get_acceleration_rate(Car car)
 {
   return car->acceleration_rate;
 }
+
 void set_acceleration_rate(Car car, double acceleration)
 {
   if (acceleration<-8)
@@ -67,18 +69,19 @@ void set_acceleration_rate(Car car, double acceleration)
   }
   if (car->carType==JEEP && acceleration>3.14)
   {
-    car->acceleration_rate=3.14;
+    acceleration=3.14;
   }
   else if (car->carType==AIXAM && acceleration>1.0)
   {
-    car->acceleration_rate=1.0;
+    acceleration=1.0;
   }
   else if (car->carType==FIAT_MULTIPLA && acceleration>2.26)
   {
-    car->acceleration_rate=2.26;
+    acceleration=2.26;
   }
   car->acceleration_rate=acceleration;
 }
+
 int get_speed(Car car)
 {
   return car->speed;
