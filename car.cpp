@@ -79,8 +79,8 @@ int get_speed(Car car)
 
 void accelerate(Car car)
 {
-  double velocity = get_acceleration_rate(car) * 3.6 + 0.5;
-  if (velocity+get_speed(car)<=car->max_speed)
+  int velocity = get_acceleration_rate(car) * 3.6 + 0.5;
+  if (velocity+get_speed(car)<= car->max_speed)
   {
     car->speed+=velocity;
   }
