@@ -8,16 +8,16 @@ struct ImplementationCar
   enum Color color;
   double fill_level;
   double acceleration_rate;
-  int speed;
+  double speed;
   bool is_available;
 };
 
-struct ImplementationCar aixam { AIXAM, 45, RED, 16.0, 0.0, 0, true};
-struct ImplementationCar fiat_mutipla1 { FIAT_MULTIPLA, 170, GREEN, 65.0, 0.0, 0, true };
-struct ImplementationCar fiat_mutipla2 { FIAT_MULTIPLA, 170, BLUE, 65.0, 0.0, 0, true };
-struct ImplementationCar fiat_mutipla3 { FIAT_MULTIPLA, 170, ORANGE, 65.0, 0.0, 0, true };
-struct ImplementationCar jeep1 { JEEP, 196, SILVER, 80.0, 0.0, 0, true };
-struct ImplementationCar jeep2 { JEEP, 196, BLACK, 80.0, 0.0, 0, true };
+struct ImplementationCar aixam { AIXAM, 45, RED, 16.0, 0.0, 0.0, true};
+struct ImplementationCar fiat_mutipla1 { FIAT_MULTIPLA, 170, GREEN, 65.0, 0.0, 0.0, true };
+struct ImplementationCar fiat_mutipla2 { FIAT_MULTIPLA, 170, BLUE, 65.0, 0.0, 0.0, true };
+struct ImplementationCar fiat_mutipla3 { FIAT_MULTIPLA, 170, ORANGE, 65.0, 0.0, 0.0, true };
+struct ImplementationCar jeep1 { JEEP, 196, SILVER, 80.0, 0.0, 0.0, true };
+struct ImplementationCar jeep2 { JEEP, 196, BLACK, 80.0, 0.0, 0.0, true };
 
 
 static Car car_park[CAR_PARK_SIZE] = {&aixam,&fiat_mutipla1,&fiat_mutipla2,&fiat_mutipla3,&jeep1,&jeep2};
@@ -74,19 +74,18 @@ void set_acceleration_rate(Car car, double acceleration)
 
 int get_speed(Car car)
 {
-  return car->speed;
+  return car->speed+0.5;
 }
 
 void accelerate(Car car)
 {
-  int velocity = get_acceleration_rate(car) * 3.6 + 0.5;
+  double velocity = get_acceleration_rate(car) * 3.6;
   if (velocity+get_speed(car)<= car->max_speed)
   {
     car->speed+=velocity;
   }
   else
   {
-    int difference=car->max_speed-get_speed(car);
-    car->speed+=difference;
+    car->speed=car->max_speed;
   }
 }
